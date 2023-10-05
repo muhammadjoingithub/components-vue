@@ -1,26 +1,58 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+ <div class="app">
+     <DropdownMenu />
+     <CButton/>
+     <sliderImage/>
+     <CountryProps :items="boxesItems" />
+ </div>
+
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import CButton from './components/CButton.vue'
+import DropdownMenu from './components/DropdownMenu.vue'
+import sliderImage from './components/sliderImage.vue'
+import CountryProps from './components/CountryProps.vue'
+
+
+
+
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    CButton,
+    DropdownMenu,
+    sliderImage,
+    CountryProps
+  },
+   data() {
+    return {
+      boxesItems: [
+        {
+          image: '../assets/vue11.png',
+          alt: 'Изображение 1',
+          title: 'Turkmenistan',
+          description: '17 destinations'
+        },
+        {
+          image: '../assets/vue22.png',
+          alt: 'Изображение 2',
+          title: 'Azerbaijan',
+          description: '21 destinations'
+        },
+        {
+          image: '../assets/vue33.png',
+          alt: 'Изображение 3',
+          title: 'Türkiye',
+          description: '20 destinations'
+        },
+      ]
+    };
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
